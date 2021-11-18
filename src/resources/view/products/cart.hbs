@@ -1,0 +1,142 @@
+<div class="container">
+  <div id="dieu-huong" class="row">
+    <div class="col-md-12">
+      <div class="dieu-huong">
+        <ul>
+          <li>
+            <a title="Đến trang chủ" href="./index.html">Trang chủ</a>
+          </li>
+          <li style="margin-left: 5px;">
+            <i class="fas fa-angle-double-right"></i>
+          </li>
+          <li style="margin-left: 5px;">
+            <strong>Giỏ hàng</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form novalidate="" class="margin-bottom-0">
+        <div class="bg-scroll">
+          <div class="cart-thead">
+            <div style="width: 18%" class="a-center">Hình ảnh</div>
+            <div style="width: 37%" class="a-center">Thông tin sản phẩm</div>
+            <div style="width: 17%" class="a-center">Đơn giá</div>
+            <div style="width: 14%" class="a-center">Số lượng</div>
+            <div style="width: 14%" class="a-center">Thành tiền</div>
+          </div>
+          {{#each bills}}
+          <div class="cart-tbody">
+            <div class="item-cart productid-23681528">
+              <div style="width: 18%" class="image"><a class="product-image" title="Cà phê Trứng"
+                  href="/san-pham/{{this.slug}}"><img width="75" height="auto" alt="Cà phê Trứng"
+                    src="{{this.img}}"></a></div>
+              <div style="width: 37%" class="a-center">
+                <h3 class="product-name"style="font-size: 20px;"
+                    title="Cà phê Trứng">{{this.sanpham}}</h3>
+                <a href="" data-toggle="modal" data-slug="{{this.slug}}" data-target="#delete-bill-modal">Xóa</a>
+              </div>
+              <div style="width: 17%" class="a-center"><span >{{this.giale}}</span></div>
+              <div style="width: 14%" class="a-center">
+                <div class="input_qty_pr">
+                  <p>{{this.quantity}}</p>
+                </div>
+              </div>
+              <div style="width: 14%" class="a-center price">{{this.gia}}</div>
+            </div>
+          </div>
+          {{else}}
+          <div class="cart-body" style="text-align: center;padding-top:70px">
+           chưa có sản phẩm nào trong giỏ hàng
+          </div>
+          {{/each}}
+        </div>
+      </form>
+      <!-- Button trigger modal -->
+
+
+      <!-- Modal -->
+      <div class="modal" id="delete-bill-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Xóa sản phẩm ?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <p aria-hidden="true">&times;
+                <p>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Bạn chắc chắn muốn xóa sản phẩm này</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="btn-delete-bill" class="btn btn-danger">Xóa bỏ</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rows pagee_checkout">
+        <div class="col-lg-5 col-md-5">
+          <div class="form-cart-button">
+            <div class=""><a href="/san-pham" class="form-cart-continue">Tiếp tục mua hàng</a></div>
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-7 bg_cart shopping-cart-table-total">
+          <div class="table-total">
+            <table class="table ">
+              <tbody>
+                <tr>
+                  <td class="total-text">Tổng tiền thanh toán</td>
+                  <td class="txt-right totals_price price_end" id="giatong"></td>
+                  <form method="POST" action="/cart/pay?_method=PATCH">
+                    <input id="tongcong" type="text" value="0" name="tongcong" class="hidden">
+                    <td class="thanhtoan"><button type="submit" class="btn-checkout-cart ">Tiến hành thanh toán</button>
+                    </td>
+                 </form>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- form xóa -->
+<form method="POST" name="delete-bill-form"></form>
+
+
+<script>
+  var t = 0;
+  var x = document.getElementsByClassName("price");
+  for (var i = 0; i < x.length; i++) {
+    var z = x[i].innerHTML;
+    var k = parseFloat(z);
+    t = t + k;
+  }
+  document.getElementById("giatong").innerHTML = t;
+  document.getElementById('tongcong').value = t;
+</script>
+<script>
+  var billslug
+  var deleteForm = document.forms['delete-bill-form']
+  var btnDeleteBill = document.getElementById('btn-delete-bill')
+
+  document.addEventListener('DOMContentLoaded', function () {
+    $('#delete-bill-modal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget)
+      billslug = button.data('slug')
+    })
+  })
+
+  btnDeleteBill.onclick = function () {
+    deleteForm.action = '/cart/' + billslug + '/?_method=DELETE'
+    deleteForm.submit()
+  }
+</script>

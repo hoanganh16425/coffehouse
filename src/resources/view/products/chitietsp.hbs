@@ -1,0 +1,259 @@
+<div class="container">
+    <div id="dieu-huong" class="row">
+        <div class="col-md-12">
+            <div class="dieu-huong">
+                <ul>
+                    <li>
+                        <a title="Đến trang chủ" href="./index.html"><span>Trang chủ</span></a>
+                    </li>
+                    <li style="margin-left: 5px;">
+                        <i class="fas fa-angle-double-right"></i>
+                    </li>
+                    <li style="margin-left: 5px;">
+                        <strong><span>Sản phẩm</span></strong>
+                    </li>
+                </ul>
+            </div>
+            <div class="ten-trang">
+                <h1 class="tittle"><span>{{products.name}}</span></h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <img src="{{products.img}}" alt="">
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5 col-md-offset-1 col-lg-offset-1">
+            <div class="group-status">
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <span style="color: darkgray;"> &nbsp;|&nbsp; </span>
+                <span>Thương hiệu: <b>{{products.trademark}}</b></span>
+                <p class="coffe">{{products.name}}</p>
+                <span class="price1">{{products.cost}}<u>đ</u></span>
+                <span class="hidden" id="price2">{{products.cost}}</span>
+                <div>
+                    <form action="/san-pham/add" method="POST">
+                        <div id="buy" style="margin-top: 30px;">
+                            <button class="btn1"
+                                onclick="var result = document.getElementById('sl'); var qtypro = result.value; if( !isNaN( qtypro )&amp;&amp; qtypro > 1 ) result.value--;return false;"
+                                type="button">-</button>
+                            <input type="text" id="sl" name="quantity" value="1" maxlength="2" class="ip"
+                                onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;"
+                                onchange="if(this.value == 0)this.value=1;">
+                            <input type="text" name="giale" class="hidden" value="{{products.cost}}">
+                            <input type="text" class="hidden" name="img" value="{{products.img}}">
+                            <input type="text" class="hidden" name="sanpham" value="{{products.name}}">
+                            <input type="text" id="gia" class="hidden" name="gia" value="1">
+                            <input type="text" class="hidden" name="tongcong" value="0">
+                            <button class="btn1"
+                                onclick="var result = document.getElementById('sl'); var qtypro = result.value; if( !isNaN( qtypro )) result.value++;return false;"
+                                type="button">+</button>
+                        </div>
+                        <button type="submit" class="sub" data-toggle="modal" data-target="#exampleModal">
+                            <span>Đặt hàng</span>
+                        </button>
+                    </form>
+                    <span style="display: block;margin-top: 20px;">Thông tin sản phẩm đang được cập nhật</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="samepro">
+    <div class="container ">
+        <div class="row">
+            <div class="col-xs-12 heading" style="margin-top: 30px;margin-bottom: 30px;">
+                <h1>Cà phê cùng loại</h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="product_grid_2">
+                        <div class="product_mini_2">
+                            <div class="img_product">
+                                <a class="product-img" href="/ca-phe-trung" title="Cà phê Trứng">
+                                    <img src="/img/caphetrung.jpg" alt="Cà phê Trứng">
+                                </a>
+                            </div>
+                            <div class="product-info">
+                                <div class="infor_prd">
+                                    <h3 class="name_product">
+                                        <a href="/ca-phe-trung" title="Cà phê Trứng">
+                                            <span>Cà phê Trứng</span>
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="price_base">
+                                    <span class="product-price" style="padding-top: 25px;">50.000₫</span>
+                                </div>
+                                <div class="summary_grid">
+                                    <div class="rte ">
+                                        Cà phê Trứng được chọn lọc kỹ lưỡng từ vù...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="product_grid_2">
+                        <div class="product_mini_2">
+                            <div class="img_product">
+                                <a class="product-img" href="/ca-phe-den" title="Cà phê Trứng">
+                                    <img src="/img/capheden.jpg" alt="Cà phê Trứng">
+                                </a>
+                            </div>
+                            <div class="product-info">
+                                <div class="infor_prd">
+                                    <h3 class="name_product">
+                                        <a href="/ca-phe-trung" title="Cà phê Trứng">
+                                            <span>Cà phê đen</span>
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="price_base">
+                                    <span class="product-price" style="padding-top: 25px;">100.000₫</span>
+                                </div>
+                                <div class="summary_grid">
+                                    <div class="rte ">
+                                        Cà phê đen được chọn lọc kỹ lưỡng từ vù...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="product_grid_2">
+                        <div class="product_mini_2">
+                            <div class="img_product">
+                                <a class="product-img" href="/ca-phe-trung" title="Cà phê Trứng">
+                                    <img src="/img/caphemocha.jpg" alt="Cà phê Trứng">
+                                </a>
+                            </div>
+                            <div class="product-info">
+                                <div class="infor_prd">
+                                    <h3 class="name_product">
+                                        <a href="/ca-phe-mocha" title="Cà phê Trứng">
+                                            <span>Cà phê Mocha</span>
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="price_base">
+                                    <span class="product-price" style="padding-top: 25px;">50.000₫</span>
+                                </div>
+                                <div class="summary_grid">
+                                    <div class="rte ">
+                                        Cà phê Mocha được chọn lọc kỹ lưỡng từ vù...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="product_grid_2">
+                        <div class="product_mini_2">
+                            <div class="img_product">
+                                <a class="product-img" href="/ca-phe-trung" title="Cà phê Mojito">
+                                    <img src="/img/caphemojito.jpg" alt="CCà phê Mojito">
+                                </a>
+                            </div>
+                            <div class="product-info">
+                                <div class="infor_prd">
+                                    <h3 class="name_product">
+                                        <a href="/ca-phe-mojito" title="Cà phê Mojito">
+                                            <span>Cà phê Mojito</span>
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="price_base">
+                                    <span class="product-price" style="padding-top: 25px;">50.000₫</span>
+                                </div>
+                                <div class="summary_grid">
+                                    <div class="rte ">
+                                        Cà phê Mojito được chọn lọc kỹ lưỡng từ vù...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+   <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fa fa-check" style="color: darkorange;"></i>
+                <h5 class="modal-title" style="display: inline-block" id="exampleModalLabel">Sản phẩm đã được thêm vào
+                    giỏ hàng</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div style="" class="col-md-3">
+                        <img style="border:solid rgb(255, 145, 0)" src="{{products.img}}" alt="">
+                    </div>
+                    <div class="col-md-4" style="margin-top: 20px;">
+                        <p>{{products.name}}</p>
+                        <p id="cost">{{products.cost}}</p>
+                        <p id="count"></p>
+                        <p id="tong"></p>
+                    </div>
+                    <a href="/cart">
+                        <button class="sub" style="width:200px">
+                            Đi tới giỏ hàng
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div class="pro2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-lg-12 col-sm-12 col-md-12">
+                <span>Mô tả sản phẩm</span>
+                <hr>
+                <p>{{products.name}} được chọn lọc kỹ lưỡng từ vùng đất đỏ bazan Buôn Mê Thuột; sau đó trải qua quá trình
+                    sàng lọc, rang xay dưới sự kiểm soát nghiêm ngặt về nhiệt độ và thời gian để đạt đến đỉnh cao
+                    của
+                    mùi thơm, độ nở và hương vị riêng biệt. Sự hài hòa trong tỷ lệ pha trộn giữa hạt cà phê Robusta
+                    và
+                    Arabica mang đến cho khách hàng những ly cà phê pha máy – kiểu Ý nhưng vẫn đậm đà bản sắc và đặc
+                    trưng của văn hóa nước Việt Nam.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //Bắt sự kiện keyup của textbox
+    $("#sl").keyup(textthaydoi);
+    //Cho #inputext phát sinh một sự kiện keyup ban đầu
+    $("#sl").keyup();
+    //Hàm đọc giá trị và hiện thị thông tin
+    function textthaydoi() {
+        var value = $(this).val();
+        var gia = document.getElementById('price2').innerHTML;
+        document.getElementById("count").innerHTML = "Số lượng " + value;
+        document.getElementById("tong").innerHTML = "Tổng : " + gia * value + " đ";
+        document.getElementById("gia").value = gia * value;
+    }
+</script>

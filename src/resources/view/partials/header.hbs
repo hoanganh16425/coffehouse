@@ -1,0 +1,106 @@
+
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/js.js">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<header class="header" style="display: block;">
+    <div style="padding-top: 30px;padding-bottom: 20px;">
+        <span class="hello">Chào mừng bạn đến với Coffee House !</span>
+
+        <span class="sign">
+            <form method="GET" class="search" action="/search">
+                <input name="name" class="find" type="text" required="">
+                <a href="/search"><button class="find" style="width:70px">search</button></a>
+            </form>
+            {{#if un }}
+            <a href="/user/profile" title="Đăng ký">
+                <span style="color: #999999;">{{un}}</span>
+            </a>
+            <span>/</span>
+            <a href="/user/logout" title="Đăng nhập">
+                <span style="color: #999999;">Đăng xuất</span>
+            </a> 
+            {{else}}
+            <a href="/user/dang-ky" title="Đăng ký">
+                <span style="color: #999999;">Đăng ký</span>
+            </a>
+            <span>/</span>
+            <a href="/user/dang-nhap" title="Đăng nhập">
+                <span style="color: #999999;">Đăng nhập</span>
+            </a>
+            {{/if}}
+            <a href="/cart">
+                <div class="icon_hotline " style="display: inline;color:orange;margin-left:10px">
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </div>
+            </a>
+        </span>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="content">
+                <nav class="header-nav">
+                    <ul class="item_big hidden-xs hidden-sm">
+                        <li class="nav-item">
+                            <a href="/">
+                                <span style="color: #e7b45a;">Trang chủ</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/gioi-thieu">
+                                <span>Giới thiệu</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/san-pham">
+                                <span>Sản phẩm</span>
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul class="item_small hidden-sm hidden-xs">
+                                <li>
+                                    <a href="/san-pham/ca-phe-the-gioi" title>Cà phê thế giới</a>
+                                </li>
+                                <li>
+                                    <a href="/san-pham/ca-phe-viet" title="">Cà phê pha Việt </a>
+                                </li>
+                                <li>
+                                    <a href="/san-pham/ca-phe-cam-hung" title="">Cà phê cảm hứng </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="logo_center">
+                        <li class="logo">
+                            <a href="/"><img src="/img/logo.png" alt=""></a>
+                        </li>
+                    </ul>
+                    <ul class="item_big nav-right hidden-xs hidden-sm" style="margin-right: 60px;">
+                        <li class="nav-item ">
+                            <a href="/dich-vu">
+                                <span>Dịch vụ</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="/tin-tuc">
+                                <span>Tin tức</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="/lien-he">
+                                <span>Liên hệ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

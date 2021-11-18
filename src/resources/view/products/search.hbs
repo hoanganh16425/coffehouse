@@ -1,0 +1,49 @@
+<div class="dieu_huong margin-bottom-40">
+    <section class="bread-crumb">
+        <span class="crumb-border"></span>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 a-left">
+                    <ul class="breadcrumb">
+                        <li class="home">
+                            <a href="./index.html"><span style="color: #999999;">Trang chủ</span></a>
+                        </li>
+                        <li><strong><span>Kết quả tìm kiếm</span></strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="container">
+{{#each products}}
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <div class="product_grid_2">
+        <div class="product_mini_2">
+            <div class="img_product">
+                <a class="product-img" href="san-pham/{{this.slug}}" title="Cà phê Trứng">
+                    <img src="{{this.img}}" alt="Cà phê Trứng">
+                </a>
+            </div>
+            <div class="product-info">
+                <div class="infor_prd">
+                    <h3 class="name_product">
+                        <a href="san-pham/{{this.slug}}" title="Cà phê Trứng">
+                            <span>{{this.name}}</span>
+                        </a>
+                    </h3>
+                </div>
+                <div class="price_base" style="background-color: white;">
+                    <span class="product-price" style="padding-top: 25px;">{{this.cost}}</span>
+                </div>
+                <div class="summary_grid">
+                    <div class="rte ">
+                        {{this.name}} được chọn lọc kỹ lưỡng từ vù...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+</div>

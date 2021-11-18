@@ -1,0 +1,208 @@
+<div class="dieu_huong margin-bottom-40">
+    <section class="bread-crumb">
+        <span class="crumb-border"></span>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 a-left">
+                    <ul class="breadcrumb">
+                        <li class="home">
+                            <a href="./index.html"><span style="color: #999999;">Trang chủ</span></a>
+                        </li>
+                        <li><strong><span> Cà phê Việt</span></strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="bg_collection collection_2">
+
+            <div class="main_container col-lg-12 ">
+                <div class="box-heading relative heading">
+                    <h1 class="title-head margin-top-0">Cà phê Việt</h1>
+                </div>
+                <div class="category-products products f-left w_100 margin-top-70">
+                    <section class="products-view products-view-grid">
+                        <div class="row">
+                             {{#each products}}
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="product-box product_grid_2">
+                                    <div class="product_mini_2 clearfix  ">
+                                        <div class="img_product">
+                                            <a href="/san-pham/{{this.slug}}" class="product-img" title="{{this.name}}">
+                                                <img src="{{this.img}}" alt="{{this.name}}">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <div class="infor_prd">
+                                                <h3 class="name_product">
+                                                    <a href="/san-pham/{{this.slug}}" title="{{this.name}}"
+                                                        class="product-name">
+                                                        <span class="name_product_other">{{this.name}}</span>
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                            <div class="price_base price_base_other">
+                                                <div class="price-box clearfix">
+                                                    <div class="special-price">
+                                                        <span class="price product-price">{{this.cost}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="summary_grid">
+                                                <div class="rte description text2line">
+                                                    {{this.name}} là sự kết hợp giữa nước dừa tươi và Espresso
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="product-box product_grid_2">
+                                    <div class="product_mini_2 clearfix  ">
+                                        <div class="img_product">
+                                            <a href="./chitietsp.html" class="product-img" title="Cà phê Trứng">
+                                                <img src="/img/caphetrung.jpg" alt="Cà phê Trứng">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <div class="infor_prd">
+                                                <h3 class="name_product">
+                                                    <a href="./chitietsp.html" title="Cà phê Trứng"
+                                                        class="product-name">
+                                                        <span class="name_product_other">Cà phê Trứng</span>
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                            <div class="price_base price_base_other">
+                                                <div class="price-box clearfix">
+                                                    <div class="special-price">
+                                                        <span class="price product-price">30.000₫</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="summary_grid">
+                                                <div class="rte description text2line">
+                                                    Cà phê Trứng là một loại thức uống có nguồn gốc từ Việt Nam được
+                                                    làm từ cà phê
+                                                    với trứng gà (có nhỏ thêm mật ong) và sữa đặc.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="product-box product_grid_2">
+                                    <div class="product_mini_2 clearfix  ">
+                                        <div class="img_product">
+                                            <a href="./chitietsp.html" class="product-img" title="Cà phê đen">
+                                                <img src="/img/capheden.jpg" alt="Cà phê đen">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <div class="infor_prd">
+                                                <h3 class="name_product">
+                                                    <a href="./chitietsp.html" title="Cà phê đen" class="product-name">
+                                                        <span class="name_product_other">Cà phê đen</span>
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                            <div class="price_base price_base_other">
+
+                                                <div class="price-box clearfix">
+                                                    <div class="special-price">
+                                                        <span class="price product-price">20.000₫</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="summary_grid">
+                                                <div class="rte description text2line">
+                                                    Cà phê đen truyền thống là thức uống tuy đắng nhưng không thể
+                                                    thiếu
+                                                    của một số người "ghiền" cà phê
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="product-box product_grid_2">
+                                    <div class="product_mini_2 clearfix  ">
+                                        <div class="img_product">
+                                            <a href="./chitietsp.html" class="product-img" title="Cà phê Sữa">
+                                                <img src="/img/caphesua.jpg" alt="Cà phê Sữa">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <div class="infor_prd">
+                                                <h3 class="name_product">
+                                                    <a href="./chitietsp.html" title="Cà phê sữa" class="product-name">
+                                                        <span class="name_product_other">Cà phê sữa</span>
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                            <div class="price_base price_base_other">
+                                                <div class="price-box clearfix">
+                                                    <div class="special-price">
+                                                        <span class="price product-price">25.000₫</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="summary_grid">
+                                                <div class="rte description text2line">
+                                                    Cà phê sữa là thức uống được pha cà phê với sữa nên có vị béo
+                                                    của sữa được rất nhiều người yêu thích
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="product-box product_grid_2">
+                                    <div class="product_mini_2 clearfix  ">
+                                        <div class="img_product">
+                                            <a href="/bac-siu" class="product-img" title="Bạc Sỉu">
+                                                <img src="/img/bacsiu.jpg" alt="Bạc Sỉu">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <div class="infor_prd">
+                                                <h3 class="name_product">
+                                                    <a href="/bac-siu" title="Bạc Sỉu" class="product-name">
+                                                        <span class="name_product_other">Bạc Sỉu</span>
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                            <div class="price_base price_base_other">
+
+                                                <div class="price-box clearfix">
+                                                    <div class="special-price">
+                                                        <span class="price product-price">30.000₫</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="summary_grid">
+                                                <div class="rte description text2line">
+                                                    Bạc sỉu là thức uống giống với cà phê sữa tuy nhiên được pha
+                                                    nhiều sữa hơn và 1 ít cà phê
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> --}}
+                        </div>
+                </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

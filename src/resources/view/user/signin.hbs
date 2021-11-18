@@ -1,0 +1,78 @@
+<div class="container">
+    <div id="dieu-huong" class="row">
+        <div class="col-md-12">
+            <div class="dieu-huong">
+                <ul>
+                    <li>
+                        <a title="Đến trang chủ" href=""><span>Trang chủ</span></a>
+                    </li>
+                    <li style="margin-left: 5px;">
+                        <i class="fas fa-angle-double-right"></i>
+                    </li>
+                    <li style="margin-left: 5px;">
+                        <strong><span>Đăng ký</span></strong>
+                    </li>
+                </ul>
+            </div>
+            <div class="ten-trang">
+                <h1 class="tittle"><span>Đăng ký</span></h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-Dangky">
+    <div class="container">
+        <div class="row row1 ">
+            <div class="col-lg-7 col-lg-offset-3">
+                <form method="POST" action="/user/dk">
+                    <div class="form-Dangky">
+                        <div class="row">
+                            <div class="col-md-12 heading">
+                                <h1 class="tittle">Đăng ký tài khoản</h1>
+                                <p>Đăng ký ngay tài khoản để nhận được những ưu đãi hấp dẫn khi mua hàng</p>
+                                <div class="content-all">
+                                    {{#if success_messages }}
+                                    <div class="alert alert-success">{{success_messages}}</div>
+                                    {{/if}}
+                                    {{#if error_messages }}
+                                    <div class="alert alert-danger">{{error_messages}}</div>
+                                    {{/if}}
+                                    <fieldset class="chitiet">
+                                        <input type="email" placeholder="Email"
+                                            pattern="[a-z0-9]+@[a-z0-9]+\.[a-z]{2,4}$" value="" name="email" id="email"
+                                            required="">
+                                        <!-- xác định địa chỉ email -->
+                                    </fieldset>
+                                    <fieldset class="chitiet">
+                                        <input type="text" placeholder="Tên người dùng" value="" name="username"
+                                            id="firstName">
+                                    </fieldset>
+                                    <fieldset class="chitiet">
+                                        <input type="password" placeholder="Mật khẩu" value="" name="password">
+                                    </fieldset>
+                                    <fieldset class="chitiet">
+                                        <input type="password" placeholder="nhập lại mật khẩu" value=""
+                                            name="confirmationPassword" >
+                                    </fieldset>
+
+                                </div>
+                                <div class="btn-dk">
+                                    <button type="summit" class="btn-Dangky" value="Đăng ký">Đăng ký</button>
+                                </div>
+                            </div>
+
+                            <div class="dn-social">
+                                <p style="text-align: center;">Hoặc đăng nhập bằng</p>
+                                <a href=""><img width="129px" height="37px" alt="facebook-login"
+                                        src="/img/fb.png"></a>
+                                <a href=""><img width="129px" height="37px" alt="facebook-login"
+                                        src="/img/gg.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

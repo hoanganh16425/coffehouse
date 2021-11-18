@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="dieu-huong">
+                <ul>
+                    <li style="margin-left: 5px;">
+                        <h3 style="margin-top: 30px;">Sửa sản phẩm </h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-top: 10px;">
+    <div class="row">
+        <form method="POST" action="/admin/{{products.slug}}?_method=PUT">
+            <div class="form-group">
+                <label for="name">Tên sản phẩm</label>
+                <textarea class="form-control" id="name" name="name">{{products.name}}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="trademark">Thương hiệu</label>
+                <textarea class="form-control" "trademark" name="trademark">{{products.trademark}}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="img">Hình ảnh</label>
+                <textarea class="form-control" "img" name="img">{{products.img}}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="cost">Giá</label>
+                <textarea class="form-control" "cost" name="cost">{{products.cost}}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="type">Loại</label>
+                <textarea class="form-control" "type" name="type">{{products.type}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-bottom:10px">Cập nhật</button>
+        </form>
+    </div>
+</div>
